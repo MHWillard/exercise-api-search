@@ -1,0 +1,9 @@
+Exercise Database
+
+Search for exercises by typing in search terms and marking certain categories. The app returns a paginated list of exercises, with descriptions and equipment needs
+
+https://api-ninjas.com/api/exercises Exercise directory based on criteria
+
+Java + Spring Boot => GET from API
+Get JSON info
+push up to frontend: React to grab, parse, present data
