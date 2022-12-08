@@ -1,0 +1,33 @@
+Exercise Database
+
+Search for exercises by typing in search terms and marking certain categories. The app returns a paginated list of exercises, with descriptions and equipment needs
+
+https://api-ninjas.com/api/exercises Exercise directory based on criteria
+
+Java + Spring Boot => GET from API
+Get JSON info
+push up to frontend: React to grab, parse, present data
+
+**********
+PROJECT STEPS
+
+-Plan out layout for objects and system architecture.
+-Establish basic Java backend with Spring Boot.
+-Make sure it can actively connect to API, get, and search data.
+-Write tests to keep it consistent.
+-Set up React app to connect to backend and get data.
+-Give React frontend enough styling, pagination and functionality to search and present data.
+-Set up app to get hosted on free server.
+-Make sure both of these are hooked together.
+
+**********
+
+Model View Controller
+
+MODEL: probably what pulls from API, parses, and pushes through backend
+API class
+Data Parser class
+
+CONTROLLER: Java + Spring Boot, gets API data, parses, and pushes up to frontend
+
+VIEW: The React or templating frontend
