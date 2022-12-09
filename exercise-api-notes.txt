@@ -25,9 +25,14 @@ PROJECT STEPS
 Model View Controller
 
 MODEL: probably what pulls from API, parses, and pushes through backend
-API class
-Data Parser class
+API class (connection, get, post?)
+Data class (take API data, parse it)
+APIInterface class (Controller will poll this for API and Data)
 
 CONTROLLER: Java + Spring Boot, gets API data, parses, and pushes up to frontend
+Controller class (talk to APIInterface class, push up to View)
 
 VIEW: The React or templating frontend
+-maybe a class where it's got the API pulled data and arranges it before pushing it up to the React app
+-View could poll for Data via an interface, unsure if that overcomplicates things
+-Then any needed Js classes to render data and push it into React format probably
