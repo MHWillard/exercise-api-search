@@ -8,19 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-//@RestController
-public class AppApplication {
+public class ConsumingRestApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(AppApplication.class);
-
-	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
-	}
+	private static final Logger log = LoggerFactory.getLogger(ConsumingRestApplication.class);
 
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -31,9 +23,14 @@ public class AppApplication {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			Quote quote = restTemplate.getForObject(
-					"http://localhost:8080/api/random", Quote.class);
+					"https://gistcdn.githack.com/ayan-b/ff0441b5a8d6c489b58659ffb849aff4/raw/e1c5ca10f7bea57edd793c4189ea8339de534b45/response.json", Quote.class);
 			log.info(quote.toString());
+			// https://openlibrary.org/developers/api
+			// https://openlibrary.org/search.json?title=vote+for+duck+click+clack+moo
 		};
 	}
 
+	public static void main(String[] args) {
+		SpringApplication.run(ConsumingRestApplication.class, args);
+	}
 }
