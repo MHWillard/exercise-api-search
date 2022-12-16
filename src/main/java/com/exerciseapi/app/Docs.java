@@ -1,19 +1,24 @@
 package com.exerciseapi.app;
 
-import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Book {
+public class Docs {
+    @JsonProperty("title")
     private String title;
+    @JsonProperty("publish_date")
     private String publish_date;
+    @JsonProperty("author_name")
     private String author_name;
+    @JsonProperty("contributor")
     private String contributor;
+    @JsonProperty("publisher")
     private ArrayList<String> publisher;
 
-    public Book(String title, String publish_date, String author_name, String contributor, ArrayList<String> publisher) {}
-
-    public Book() {}
+    public Docs() {}
 
     @Override
     public String toString() {
@@ -22,5 +27,4 @@ public class Book {
         //return "Title: " + title + "Date: " + publish_date + "Author: " + author_name + "Contributor: " + contributor + "Publishers: " + publishers;
         return "Title: " + title + "Date: " + publish_date + "Author: " + author_name + "Contributor: " + contributor + "Publishers: ";
     }
-
 }

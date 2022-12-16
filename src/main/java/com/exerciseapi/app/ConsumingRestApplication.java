@@ -22,11 +22,13 @@ public class ConsumingRestApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			Quote quote = restTemplate.getForObject(
-					"https://gistcdn.githack.com/ayan-b/ff0441b5a8d6c489b58659ffb849aff4/raw/e1c5ca10f7bea57edd793c4189ea8339de534b45/response.json", Quote.class);
+			Quote quote = restTemplate.getForObject("https://gistcdn.githack.com/ayan-b/ff0441b5a8d6c489b58659ffb849aff4/raw/e1c5ca10f7bea57edd793c4189ea8339de534b45/response.json", Quote.class);
 			log.info(quote.toString());
 			// https://openlibrary.org/developers/api
 			// https://openlibrary.org/search.json?title=vote+for+duck+click+clack+moo
+
+			//Entry entry = restTemplate.getForObject("https://openlibrary.org/search.json?title=vote+for+duck+click+clack+moo", Entry.class);
+			//log.info(entry.toString());
 		};
 	}
 
