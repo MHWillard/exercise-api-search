@@ -7,8 +7,25 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Entry {
     @JsonProperty("numFound")
     private Integer numFound;
+    //@JsonProperty("title")
+    //private String title;
 
+    @JsonProperty("docs")
     private Docs docs;
+
+    public Integer getNumFound() { return numFound;}
+
+    public void setNumFound(Integer numFound) {
+        this.numFound = numFound;
+    }
+
+    public Docs getDocs() {
+        return docs;
+    }
+
+    public void setDocs(Docs docs) {
+        this.docs = docs;
+    }
 
     public Entry() {}
 
@@ -16,7 +33,8 @@ public class Entry {
         //String publishers = "";
         //publisher.forEach((house) -> publishers.concat(house));
         //return "Title: " + title + "Date: " + publish_date + "Author: " + author_name + "Contributor: " + contributor + "Publishers: " + publishers;
-        return "Number found: " + numFound + ", Docs: " + docs;
+        return "Number found: " + numFound; //+ ", Docs: " + docs;
+        //return "title: " + title;
         //return numFound.toString();
     }
 }
