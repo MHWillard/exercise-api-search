@@ -59,6 +59,9 @@ public class ConsumingRestApplication {
 
 			RestTemplate restTemplate = new RestTemplate();
 			String fullSearchURL = String.format("https://openlibrary.org/search.json?q=%s", searchTerm);
+			//http://localhost:8080/json?searchTerm=x
+
+		//https://spring.io/guides/tutorials/react-and-spring-data-rest/ = thymeleaf to pull in Reach output
 
 			Entry entry = restTemplate.getForObject(fullSearchURL, Entry.class);
 			log.info(entry.toString());
