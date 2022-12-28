@@ -47,11 +47,6 @@ public class ConsumingRestApplication {
 
 	@GetMapping("/json")
 	public String json(@RequestParam(value = "searchTerm", defaultValue = "lord+of+the+rings") String searchTerm) {
-		//return String.format("Hello %s!", name);
-		//get name value
-		//push it to data class that pulls from API and arranges into data format
-		//returns it here on route access
-		//return args -> {
 			//Quote quote = restTemplate.getForObject("https://gistcdn.githack.com/ayan-b/ff0441b5a8d6c489b58659ffb849aff4/raw/e1c5ca10f7bea57edd793c4189ea8339de534b45/response.json", Quote.class);
 			//log.info(quote.toString());
 			// https://openlibrary.org/developers/api
@@ -68,4 +63,12 @@ public class ConsumingRestApplication {
 			return String.format(entry.toString());
 		//};
 	}
+
+	@GetMapping("/test")
+	public String test(@RequestParam() String id) {
+		return "ID: " + id;
+		//also generate test list item here to return probably
+	}
 }
+
+//start: make a repo for the data so it can be pulled by React/any frontend

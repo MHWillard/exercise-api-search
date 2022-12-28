@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {Results}  from './Results.js';
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
           Learn React
         </a>
       </header>
+        <Results />
     </div>
   );
 }
+
+//component => put in searchTerm => do get request to it and pump that searchTerm into the backend where it'll fetch and return the JSON data
 
 export default App;
