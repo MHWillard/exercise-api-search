@@ -63,12 +63,6 @@ public class ConsumingRestApplication {
 			return String.format(entry.toString());
 		//};
 	}
-
-	@GetMapping("/test")
-	public String test(@RequestParam() String id) {
-		return "ID: " + id;
-		//also generate test list item here to return probably
-	}
 }
 
 //start: make a repo for the data so it can be pulled by React/any frontend

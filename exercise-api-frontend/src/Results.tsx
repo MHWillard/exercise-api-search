@@ -1,9 +1,17 @@
-export function Results() {
+import React from 'react'
+
+type helloProps = {hello?: string}
+
+class Results extends React.Component<helloProps> {
+    render() {
+
     return(
         <div>
-            <p>Hello Woorld</p>
+            <p>Hello World</p>
+            {this.props.hello}
         </div>
     );
+    }
 }
 
-//look up how to settle this export in Typescript
+export default Results;
