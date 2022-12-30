@@ -1,0 +1,21 @@
+{
+  "numFound": 1,
+  "docs": [
+    {
+      "title": "Vote for Duck (Click Clack Moo)",
+      "publish_date": ["June 7, 2004"],
+      "author_name": ["Doreen Cronin"],
+      "contributor": ["Betsy Lewin (Illustrator)"],
+      "publisher": ["Pocket Books", "Simon & Schuster Childrens Books"],
+      "number_of_pages_median": 32,
+      "isbn": ["9780689860416", "0689860412", "0743483898", "9780743483896"],
+      "subject_facet": [
+        "Ducks",
+        "Elections",
+        "Fiction",
+        "Juvenile fiction",
+        "janet"
+      ]
+    }
+  ]
+}

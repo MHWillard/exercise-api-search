@@ -4,23 +4,25 @@ import Results  from './Results';
 import React from 'react';
 
 type myState = {
-  helloData: string;
+  name: string;
 }
 
 class App extends React.Component<{}, myState> {
 
   state: myState = {
-    helloData: "",
+    name: "",
   };
 
   async componentDidMount() {
-    const response = await fetch('/test');
+    const response = await fetch('/react');
     const body = await response.json();
-    this.setState({helloData: body});
+    console.log(JSON.stringify(body));
+    //get json, break it apart, or assign specific value of key to the state => look up Javascript docs for this
+    this.setState({name: body});
   }
 
   render() {
-    const {helloData} = this.state;
+    const {name} = this.state;
   return (
     <div className="App">
       <header className="App-header">
@@ -37,7 +39,7 @@ class App extends React.Component<{}, myState> {
           Learn React
         </a>
       </header>
-        <Results hello={helloData} />
+        <Results hello={name} />
     </div>
   );
   }
