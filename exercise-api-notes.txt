@@ -36,3 +36,11 @@ VIEW: The React or templating frontend
 -maybe a class where it's got the API pulled data and arranges it before pushing it up to the React app
 -View could poll for Data via an interface, unsure if that overcomplicates things
 -Then any needed Js classes to render data and push it into React format probably
+
+***********
+
+WORKING WITH THE JSON DATA
+Do this all on the backend before returning the data upwards.
+
+-do the initial data search, and from it, pull the 'works/XXXXXXXXX' values.
+title, first publish year, author name

@@ -17,8 +17,9 @@ class App extends React.Component<{}, myState> {
     const response = await fetch('/react');
     const body = await response.json();
     console.log(JSON.stringify(body));
+    let setName: string = body.name;
     //get json, break it apart, or assign specific value of key to the state => look up Javascript docs for this
-    this.setState({name: body});
+    this.setState({name: setName});
   }
 
   render() {

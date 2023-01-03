@@ -7,8 +7,8 @@ class Results extends React.Component<helloProps> {
 
     return(
         <div>
-            <p>Hello World</p>
-            {this.props.hello}
+            <p>Hello World!</p>
+            <p>Hello, {this.props.hello}!</p>
         </div>
     );
     }
