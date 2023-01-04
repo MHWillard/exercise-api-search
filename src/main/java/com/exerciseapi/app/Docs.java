@@ -10,24 +10,11 @@ public class Docs {
     @JsonProperty("title")
     private String title;
 
-    @JsonProperty("publish_date")
-    private List<String> publish_date;
-
-    @JsonProperty("author_name")
-    private List<String> author_name;
-    @JsonProperty("contributor")
-    private List<String> contributor;
-    @JsonProperty("publisher")
-    private List<String> publisher;
-
     @JsonProperty("number_of_pages_median")
     private Integer number_of_pages_median;
 
-    @JsonProperty("isbn")
-    private List<String> isbn;
-
-    @JsonProperty("subject_facet")
-    private List<String> subject_fact;
+    @JsonProperty("first_publish_year")
+    private Integer first_publish_year;
 
     public Docs() {}
 
@@ -39,6 +26,6 @@ public class Docs {
 
     @Override
     public String toString() {
-        return "Title: " + title + "Date: " + publish_date + "Author: " + author_name + "Contributor: " + contributor + "Publishers: " + publisher;
+        return "Title: " + title + "Date: " + first_publish_year + "Pages: " + number_of_pages_median;
     }
 }

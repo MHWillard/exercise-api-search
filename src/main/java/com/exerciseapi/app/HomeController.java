@@ -38,6 +38,9 @@ public class HomeController {
         return testJSON; //probably need to return an actual string as a response
     }
 
+    @GetMapping("/react2")
+
+
     @RequestMapping("/test")
     public String indexR() {
 

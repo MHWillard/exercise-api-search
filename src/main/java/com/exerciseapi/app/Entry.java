@@ -15,11 +15,9 @@ public class Entry {
 
     @JsonProperty("numFound")
     private Integer numFound;
-    //@JsonProperty("title")
-    //private String title;
 
     @JsonProperty("docs")
-    private List<Docs> docs;
+    private List<Book> docs;
 
     public Integer getNumFound() { return numFound;}
 
@@ -28,11 +26,11 @@ public class Entry {
     }
 
     //internal json arrays must be parsed accordingly so I needed to turn it into a list here for RestTemplate
-    public List<Docs> getDocs() {
+    public List<Book> getDocs() {
         return docs;
     }
 
-    public void setDocs(List<Docs> docs) {
+    public void setDocs(List<Book> docs) {
         this.docs = docs;
     }
 
