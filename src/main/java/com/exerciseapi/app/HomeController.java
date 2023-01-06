@@ -23,7 +23,7 @@ public class HomeController {
         RestTemplate restTemplate = new RestTemplate();
         //String helloData = "test";
         //return helloData; //probably need to return an actual string as a response
-        Entry entry = restTemplate.getForObject("https://openlibrary.org/search.json?q=vote+for+duck+click+clack+moo", Entry.class);
+        Entry entry = restTemplate.getForObject("https://openlibrary.org/search.json?q=redwall", Entry.class);
         //log.info(entry.toString());
         //return String.format(entry.toString());
         return entry;
@@ -52,6 +52,8 @@ public class HomeController {
         return String.format(entry.toString());
     }
 }
+
+/* TODO: get book description using doc.key and then put into json object */
 
 /*
 * 	@GetMapping("/test")

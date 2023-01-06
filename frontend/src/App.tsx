@@ -4,7 +4,12 @@ import Results  from './Results';
 import React from 'react';
 
 type myState = {
-  name: string;
+  key: string;
+  title: string;
+  first_publish_year: number;
+  number_of_pages_median: number;
+  author_name: string[];
+  subject: string[]
 }
 
 class App extends React.Component<{}, myState> {
