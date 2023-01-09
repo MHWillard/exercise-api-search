@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Results  from './Results';
 import React from 'react';
 
 type myState = {
-  key: string;
+  book_key: string;
   title: string;
   first_publish_year: number;
   number_of_pages_median: number;
@@ -15,23 +14,30 @@ type myState = {
 class App extends React.Component<{}, myState> {
 
   state: myState = {
-    name: "",
+    book_key: "",
+    title: "",
+    first_publish_year: 0,
+    number_of_pages_median: 0,
+    author_name: [],
+    subject: []
   };
 
   async componentDidMount() {
     const response = await fetch('/react');
     const body = await response.json();
     console.log(JSON.stringify(body));
-    let setName: string = body.name;
+    let setKey: string = body["docs"][0]["key"];
     //get json, break it apart, or assign specific value of key to the state => look up Javascript docs for this
-    this.setState({name: setName});
+    this.setState({book_key: setKey});
   }
 
   render() {
-    const {name} = this.state;
+    const {book_key} = this.state;
   return (
     <div className="App">
-      <header className="App-header">
+      
+      <header>
+        {/*
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -43,9 +49,9 @@ class App extends React.Component<{}, myState> {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
-        <Results hello={name} />
+        <Results book_key={book_key} />
     </div>
   );
   }

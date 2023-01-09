@@ -30,19 +30,21 @@ public class HomeController {
     }
 
     @GetMapping("/react")
-    public JSONObject reactIndex() {
-        JSONObject testJSON = new JSONObject();
-        testJSON.put("name", "Bill");
+    public Entry indexR() {
 
-        //String helloData = "react test";
-        return testJSON; //probably need to return an actual string as a response
+        RestTemplate restTemplate = new RestTemplate();
+        //String helloData = "test";
+        //return helloData; //probably need to return an actual string as a response
+        Entry entry = restTemplate.getForObject("https://openlibrary.org/search.json?q=vote+for+duck+click+clack+moo", Entry.class);
+        //log.info(entry.toString());
+        return entry;
     }
 
     @GetMapping("/react2")
 
 
     @RequestMapping("/test")
-    public String indexR() {
+    public String indexRX() {
 
         RestTemplate restTemplate = new RestTemplate();
         //String helloData = "test";
