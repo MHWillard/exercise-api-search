@@ -41,6 +41,15 @@ public class HomeController {
     }
 
     @GetMapping("/react2")
+    public Entry indexR2() {
+
+        RestTemplate restTemplate = new RestTemplate();
+        //String helloData = "test";
+        //return helloData; //probably need to return an actual string as a response
+        Entry entry = restTemplate.getForObject("https://openlibrary.org/search.json?q=redwall", Entry.class);
+        //log.info(entry.toString());
+        return entry;
+    }
 
 
     @RequestMapping("/test")

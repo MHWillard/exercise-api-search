@@ -44,3 +44,12 @@ Do this all on the backend before returning the data upwards.
 
 -do the initial data search, and from it, pull the 'works/XXXXXXXXX' values.
 title, first publish year, author name
+
+**********
+
+For the frontend:
+-for each Book in Docs, iterate
+--pull the data
+--install it in an Entry component
+--print that Entry within the Results component
+--do this for each Book

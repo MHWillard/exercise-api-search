@@ -2,7 +2,7 @@ import React from 'react'
 
 type keyProps = {numFound?: number}
 
-class Results extends React.Component<keyProps> {
+class Entry extends React.Component<keyProps> {
     render() {
 
     return(
@@ -14,4 +14,4 @@ class Results extends React.Component<keyProps> {
     }
 }
 
-export default Results;
+export default Entry;

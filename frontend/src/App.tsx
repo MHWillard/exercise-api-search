@@ -2,7 +2,7 @@ import './App.css';
 import Results  from './Results';
 import React from 'react';
 
-type myState = {
+type Book = {
   book_key: string;
   title: string;
   first_publish_year: number;
@@ -11,28 +11,38 @@ type myState = {
   subject: string[]
 }
 
+type myState = {
+  numFound: number;
+  docs : Book[]
+}
+
+/*
+JSON returned is a group of objects
+-so we probably need to define a type for Docs
+-then the state can be an array of Docs
+-then: for each Doc, we iterate and dump it into their own Entry
+*/
+
 class App extends React.Component<{}, myState> {
 
   state: myState = {
-    book_key: "",
-    title: "",
-    first_publish_year: 0,
-    number_of_pages_median: 0,
-    author_name: [],
-    subject: []
+    numFound: 0,
+    docs: []
   };
 
   async componentDidMount() {
-    const response = await fetch('/react');
+    const response = await fetch('/react2');
     const body = await response.json();
     console.log(JSON.stringify(body));
-    let setKey: string = body["docs"][0]["key"];
+    let setNum: number = body["numFound"];
+    let setDocs: Book[] = body["docs"];
+    //body["docs"]
     //get json, break it apart, or assign specific value of key to the state => look up Javascript docs for this
-    this.setState({book_key: setKey});
+    this.setState({numFound: setNum, docs: setDocs});
   }
 
   render() {
-    const {book_key} = this.state;
+    const {numFound} = this.state;
   return (
     <div className="App">
       
@@ -51,7 +61,7 @@ class App extends React.Component<{}, myState> {
           Learn React
         </a> */}
       </header>
-        <Results book_key={book_key} />
+        <Results numFound={numFound} />
     </div>
   );
   }
