@@ -1,6 +1,6 @@
 import './App.css';
-import Results  from './Results';
 import React from 'react';
+import Entry from './Entry';
 
 type Book = {
   book_key: string;
@@ -42,7 +42,9 @@ class App extends React.Component<{}, myState> {
   }
 
   render() {
-    const {numFound} = this.state;
+    //const {numFound} = this.state;
+    const {docs} = this.state;
+
   return (
     <div className="App">
       
@@ -61,7 +63,18 @@ class App extends React.Component<{}, myState> {
           Learn React
         </a> */}
       </header>
-        <Results numFound={numFound} />
+        {/* <Results numFound={numFound} />   book_key: string;
+  title: string;
+  first_publish_year: number;
+  number_of_pages_median: number;
+  author_name: string[];
+  subject: string[] */}
+        {docs.map((book: Book, index: number) => {return <Entry key={index} book_key={book.book_key} 
+        title={book.title} 
+        first_publish_year={book.first_publish_year} 
+        number_of_pages_median={book.number_of_pages_median} 
+        author_name={book.author_name} 
+        subject={book.subject} />})}
     </div>
   );
   }
